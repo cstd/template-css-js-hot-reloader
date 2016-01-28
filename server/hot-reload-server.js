@@ -18,6 +18,8 @@ app.get('/', function(req, res) {
   res.sendFile(path.resolve('public/index.html'));
 });
 
+app.use('/static/', express.static('./public/static'));
+
 var server = app.listen(3000, function(error) {
   var host = server.address().address;
   var port = server.address().port;
