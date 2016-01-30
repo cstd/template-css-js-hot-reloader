@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node server/express-server.js",
     "dev": "node server/hot-reload-server.js",
-    "build": "./node_modules/.bin/webpack --config webpack.config.prod.js",
+    "build": "cross-env NODE_ENV=production ./node_modules/.bin/webpack --config webpack.config.prod.js",
     "build:dev": "./node_modules/.bin/webpack --config webpack.config.dev.js"
   },
   "author": "CSTD",
@@ -17,9 +17,11 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "babel-preset-react-hmre": "^1.0.1",
+    "cross-env": "^1.0.7",
     "css-loader": "^0.23.1",
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
     "node-sass": "^3.4.2",
     "normalize.css": "^3.0.3",
     "sass-loader": "^3.1.2",
