@@ -3,21 +3,27 @@ var webpack = require('webpack');
 
 
 module.exports = {
-  entry: [
-    'webpack-hot-middleware/client',
-    './src/js/index'
-  ],
+  entry: {
+    app: [
+      'webpack-hot-middleware/client',
+      './src/js/index.js'
+    ],
+    react: [
+      'webpack-hot-middleware/client',
+      './src/react/index.js'
+    ]
+  },
   output: {
   	path: path.join(__dirname, 'public/static/'),
     publicPath: '/static/',
-    filename: 'js/app.js'
+    filename: 'js/[name].js'
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
         loader: "babel-loader",
-        include: path.join(__dirname, 'src/js')
+        include: path.join(__dirname, 'src')
       },
       {
         test: /\.scss$/,

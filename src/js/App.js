@@ -1,8 +1,5 @@
-import React, { Component } from 'react';
+export default class App {render(){}};  // Don't know exactly how hrm works, but this line make it works :)
 
-
-export default class App extends Component {
-	render() {
-		return <h1>Hello World</h1>;
-	}
-}
+$(document).ready(function() {
+	// Some miracles happen!
+});

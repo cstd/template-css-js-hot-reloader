@@ -1,4 +1,8 @@
-Template build sass/css, react/js with Hot Reloader
+Template to build web front-end with Hot Reloader:
+- SASS/CSS
+- ReactJS
+- JQuery or native javascript
+- Ionicons
 
 npm install
 

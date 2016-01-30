@@ -4,13 +4,18 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 
 module.exports = {
-  entry: [
-    './src/js/index'
-  ],
+  entry: {
+    app: [
+      './src/js/index.js'
+    ],
+    react: [
+      './src/react/index.js'
+    ]
+  },
   output: {
   	path: path.join(__dirname, 'public/static/'),
     publicPath: '/static/',
-    filename: 'js/app.js'
+    filename: 'js/[name].js'
   },
   module: {
     loaders: [
