@@ -6,10 +6,10 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   entry: {
     app: [
-      './src/js/index.js'
+      './src/js/native/index.js'
     ],
     react: [
-      './src/react/index.js'
+      './src/js/react/index.js'
     ]
   },
   output: {

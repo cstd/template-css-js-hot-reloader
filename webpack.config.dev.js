@@ -6,11 +6,11 @@ module.exports = {
   entry: {
     app: [
       'webpack-hot-middleware/client',
-      './src/js/index.js'
+      './src/js/native/index.js'
     ],
     react: [
       'webpack-hot-middleware/client',
-      './src/react/index.js'
+      './src/js/react/index.js'
     ]
   },
   output: {
