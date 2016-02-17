@@ -9,7 +9,7 @@
     "build": "npm run clean && cross-env NODE_ENV=production ./node_modules/.bin/webpack --config webpack.config.prod.js",
     "build:dev": "npm run clean && ./node_modules/.bin/webpack --config webpack.config.dev.js",
     "clean": "npm run clean:css && npm run clean:js && npm run clean:font",
-    "clean:css": "rimraf ./public/static/js/app.css",
+    "clean:css": "rimraf ./public/static/css/app.css",
     "clean:js": "rimraf ./public/static/js/app.js && rimraf ./public/static/js/react.js",
     "clean:font": "rimraf ./public/static/fonts/*"
   },

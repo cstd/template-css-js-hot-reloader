@@ -1,6 +1,6 @@
 node_modules/
 npm-debug.log
-public/static/js/app.css
+public/static/css/app.css
 public/static/js/app.js
 public/static/js/react.js
 public/static/fonts/*
