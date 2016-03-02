@@ -26,6 +26,6 @@ var server = app.listen(3000, function(error) {
   if (error) {
     console.error(error)
   } else {
-    console.log("CSTD Development (Hot Reloader) listening at http://%s:%s", host, port);
+    console.log("SoSub.Org Development (Hot Reloader) listening at http://%s:%s", host, port);
   }
 });
