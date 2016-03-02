@@ -1,30 +1,27 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import App from './App';
-
 import { Provider } from 'react-redux';
-import rootReducer from './reducers';
-import { createStore, applyMiddleware } from 'redux';
 import { Router, Route, browserHistory } from 'react-router';
-import { syncHistory } from 'react-router-redux';
+
+import { createStore, compose, applyMiddleware } from 'redux';
+import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
+
+import rootReducer from './reducers';
+
+import App from './App';
 
 
 // Grab the state from a global injected into server-generated HTML
 const initialState = window.__INITIAL_STATE__;
 
-// Sync dispatched route actions to the history
-const reduxRouterMiddleware = syncHistory(browserHistory);
-const createStoreWithMiddleware = applyMiddleware(reduxRouterMiddleware)(createStore);
+const store = createStore(rootReducer, initialState, compose(applyMiddleware(routerMiddleware(browserHistory))));
 
-const store = createStoreWithMiddleware(rootReducer, initialState);
-
-// Required for replaying actions from devtools to work
-reduxRouterMiddleware.listenForReplays(store);
+const history = syncHistoryWithStore(browserHistory, store);
 
 render(
 	<Provider store={store}>
-		<Router history={browserHistory}>
+		<Router history={history}>
 			<Route path="/" component={App}>
 				<Route path="page1/:id" component={null}/>
 				<Route path="page2/:id" component={null}/>

@@ -8,9 +8,9 @@ import rootReducer from '../src/js/react/reducers';
 import App from '../src/js/react/App';
 
 import { renderToString } from 'react-dom/server';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 import { Router, Route, createMemoryHistory } from 'react-router';
-import { syncHistory } from 'react-router-redux';
+import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
 
 
 const app = Express();
@@ -26,13 +26,11 @@ app.get('/page2/*', handleRender);
 function handleRender(req, res) {
 	console.log(req.url);
 
-	const history = createMemoryHistory();
+	const memoHistory = createMemoryHistory();
 
-	// Sync dispatched route actions to the history
-	const reduxRouterMiddleware = syncHistory(history);
-	const createStoreWithMiddleware = applyMiddleware(reduxRouterMiddleware)(createStore);
+	const store = createStore(rootReducer, initialState, compose(applyMiddleware(routerMiddleware(memoHistory))));
 
-	const store = createStoreWithMiddleware(rootReducer);
+	const history = syncHistoryWithStore(memoHistory, store);
 
 	// Render the component to a string
 	const html = renderToString(
@@ -58,7 +56,7 @@ function renderFullPage(html, initialState) {
 		<!DOCTYPE html>
 		<html>
 			<head>
-				<title>Product Hunt Clone</title>
+				<title>CSTD Development</title>
 				<link rel="icon" href="/static/img/favicon.ico">
     			<link rel="stylesheet" href="/static/css/app.css">
 			</head>
