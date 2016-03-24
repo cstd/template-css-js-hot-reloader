@@ -4,17 +4,14 @@
   "description": "Template build sass/css, react/js with Hot Reloader",
   "scripts": {
     "start": "node server/express-server.js",
-    "start:dev": "npm run clean && node server/hot-reload-server.js",
-    "dev": "npm run start:dev",
-    "start:universal": "npm run clean && node server/universal-server-es5.js",
-    "universal": "npm run start:universal",
     "build": "npm run clean && cross-env NODE_ENV=production ./node_modules/.bin/webpack --config webpack.config.prod.js",
-    "build:dev": "npm run clean && ./node_modules/.bin/webpack --config webpack.config.dev.js",
-    "build:universal": "npm run clean && cross-env NODE_ENV=production ./node_modules/.bin/webpack --config webpack.config.universal.js",
     "clean": "npm run clean:css && npm run clean:js && npm run clean:font",
     "clean:css": "rimraf ./public/static/css/app.css",
     "clean:js": "rimraf ./public/static/js/app.js && rimraf ./public/static/js/react.js",
-    "clean:font": "rimraf ./public/static/fonts/*"
+    "clean:font": "rimraf ./public/static/fonts/*",
+    "dev": "node server/hot-reload-server.js",
+    "universal": "node server/universal-server-es5.js",
+    "build:universal": "cross-env NODE_ENV=production webpack --config webpack.config.universal.js"
   },
   "author": "CSTD",
   "license": "MIT",

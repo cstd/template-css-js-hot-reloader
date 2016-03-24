@@ -56,6 +56,7 @@ function renderFullPage(html, initialState) {
 		<!DOCTYPE html>
 		<html>
 			<head>
+				<meta charset="UTF-8">
 				<title>CSTD Development</title>
 				<link rel="icon" href="/static/img/favicon.ico">
     			<link rel="stylesheet" href="/static/css/app.css">

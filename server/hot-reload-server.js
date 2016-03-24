@@ -18,7 +18,8 @@ app.get('/', function(req, res) {
   res.sendFile(path.resolve('public/index.html'));
 });
 
-app.use('/static/', express.static('./public/static'));
+app.use('/static/img/', express.static('./public/static/img/'));
+app.use('/static/js/jquery.min.js', express.static('./public/static/js/jquery.min.js'));
 
 var server = app.listen(3000, function(error) {
   var host = server.address().address;
@@ -26,6 +27,6 @@ var server = app.listen(3000, function(error) {
   if (error) {
     console.error(error)
   } else {
-    console.log("SoSub.Org Development (Hot Reloader) listening at http://%s:%s", host, port);
+    console.log("CSTD Development (Hot Reloader) listening at http://%s:%s", host, port);
   }
 });
