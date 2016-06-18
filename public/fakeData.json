@@ -1,0 +1,7 @@
+{
+	"page1Data": "I'm Ice",
+	"page2Data": {
+		"thunder": "I'm Thunder",
+		"fire": "I'm Fire"
+	}
+}

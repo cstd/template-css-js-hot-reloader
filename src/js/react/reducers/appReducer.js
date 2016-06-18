@@ -1,16 +1,22 @@
-import { SOME_CONST } from '../constants/actionTypes';
+import { SET_PAGE1_DATA, SET_PAGE2_DATA } from '../constants/actionTypes';
 import { UPDATE_LOCATION } from 'react-router-redux';
 
 
 const initialState = {
-    something: null
+    page1Data: null,
+    page2Data: null
 }
 
 export default function appReducer(state = initialState, action) {
 	switch (action.type) {
-	    case SOME_CONST:
+	    case SET_PAGE1_DATA:
 			return Object.assign({}, state, {
-				something: action.something
+				page1Data: action.data
+			});
+
+		case SET_PAGE2_DATA:
+			return Object.assign({}, state, {
+				page2Data: action.data
 			});
 
 		case UPDATE_LOCATION:

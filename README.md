@@ -3,6 +3,7 @@ Template to build web front-end with Hot Reloader:
 - ReactJS
 - JQuery or native javascript
 - Ionicons
+- Redux + React-Router
 
 npm install
 

@@ -1,1 +1,2 @@
-export const SOME_CONST = 'SOME_CONST';
+export const SET_PAGE1_DATA = 'SET_PAGE1_DATA';
+export const SET_PAGE2_DATA = 'SET_PAGE2_DATA';

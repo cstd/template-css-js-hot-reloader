@@ -51,6 +51,6 @@ module.exports = {
         warnings: false
       }
     }),
-    new ExtractTextPlugin("css/app.css")
+    new ExtractTextPlugin("css/style.css")
   ]
 }

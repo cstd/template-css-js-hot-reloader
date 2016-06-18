@@ -18,6 +18,18 @@ app.get('/', function(req, res) {
   res.sendFile(path.resolve('public/index.html'));
 });
 
+app.get('/page1/*', function(req, res) {
+  res.sendFile(path.resolve('public/index.html'));
+});
+
+app.get('/page2/*', function(req, res) {
+  res.sendFile(path.resolve('public/index.html'));
+});
+
+app.get('/fakeData.json', function(req, res) {
+  res.sendFile(path.resolve('public/fakeData.json'));
+});
+
 app.use('/static/img/', express.static('./public/static/img/'));
 app.use('/static/js/jquery.min.js', express.static('./public/static/js/jquery.min.js'));
 
